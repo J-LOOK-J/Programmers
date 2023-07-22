@@ -1,4 +1,4 @@
-package Study.Week_01;
+package Level_1;
 
 public class 소수만들기 {
     static int solution(int[] nums) {
@@ -24,7 +24,9 @@ public class 소수만들기 {
             return false;
         }
 
-        for (int i = 3; i < (Math.sqrt(num)) + 1; i = i + 2) {
+        int sqrt = (int) Math.sqrt(num) +1 ;
+
+        for (int i = 3; i < sqrt; i = i + 2) {
             if (num % i == 0) {
                 return false;
             }

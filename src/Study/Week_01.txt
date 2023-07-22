@@ -1,0 +1,59 @@
+
+< Lv1 소수만들기(공통문제) >
+    풀이 : 삼중 for 문을 이용해 숫자를 조합후 소수인지 아닌지 판별.
+
+< Lv1 과일장수 >
+    1. 시간초과 발생함
+        풀이 : score 를 내림차순으로 정렬 후 m 개씩 잘라 내어 m 개씩 잘라낸 것중 맨 앞의 값을 곱해 계산
+
+    2. 퀵 정렬 사용
+        정렬 알고리즘개선 : 선택정렬(시간복잡도: O(n2)) -> 퀵 정렬(시간복잡도: 0(logN))
+        참고링크
+            - 알고리즘 : https://d2.naver.com/helloworld/0315536
+            - 빅오표기법 : https://velog.io/@on-n-on-turtle/누구나-자료구조와-알고리즘-빅오표기법
+
+    3. 다른 사람 풀이
+        - Arrays.sort 를 사용해 오름차순으로 정렬
+            내부 코드 : DualPivotQuickSort
+            Best Cases : O(nlog(n))
+            Average Cases : O(nlog(n))
+            Worst Cases :O(n^2)
+
+< Lv1 포켓몬 >
+    통과
+
+< Lv1 약수의 합 >
+    1. 풀이 :
+        1부터 지정 수의 루트값까지 for 문을 돌려 나누어 0이 되는 수를 찾는다.
+        위 단계에서 찾은 수와 그 수로 나누어 진 몫을 answer 에 더해준다.
+        => case 1,2,12에서 통과하지 못함
+
+    2.  제곱근의 경우를 고려하지 않음.
+        제곱근의 경우 i 도 n/i 도 같은 수 이므로 중복으로 더해짐
+
+    3. n = 0인경우
+        n 을 제곱근으로 나누어주는 부분이 있는데 이때
+            int sqrt = (int)Math.sqrt(n);
+            n / sqrt
+        제곱근을 sqrt 변수에 담아 사용하는 경우 n = 0  인경우 'ArithmeticException'에러가 발생함
+
+        아래와 같이 수정함
+            // int sqrt = (int)Math.sqrt(n);
+            n / Math.sqrt(n);
+
+        => 왜 0의 경우 왜 변수에 담아두지 않으면 에러가 발생하지 않는지 이해가가지않음
+            Math.sqrt(n) 은 0 이 아닌 건가?
+
+
+< 콜라문제 >
+    다른사람 풀이
+    - return (n > b ? n - b : 0) / (a - b) * b;
+        이코드는... 이해가 안간다...ㅎㅎ
+
+    - 재귀함수를 return 할때 호출 하기도 한다.
+        return recursive(a, b, n, result + change);
+
+    - 재귀함수 말고 while 문을 사용해 풀어보는건?
+        변수가 참조값이 아니라 재귀함수호출시 해당 값을 계속 반환 받아야 하는데
+        while 문을 사용하는 방법도 고려해보자.
+
