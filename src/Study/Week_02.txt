@@ -1,0 +1,39 @@
+< Lv1 같은숫자는싫어(공통문제) >
+    풀이 : 처음 값을 tmep 라는 임시 변수에 저장
+          다음 값부터 이 temp 변수와 비교
+                - tmep 와 같은 경우 -> 다음 변수와 비교
+                - temp 와 다른 경우 -> arraylist.add(temp) temp = 다음 변수;
+                - loop 를 빠져나와 마지막 temp 를 queue 에 더해준다.
+
+    다른사람 풀이 )
+        tmep 에 10을 준뒤 같지 않은경우 tmep 가 아닌 loop 의 값을 arraylist에 더해준다.
+        예시 코드
+            int preNum = 10;
+            for(int num : arr) {
+                if(preNum != num)
+                    tempList.add(num);
+                preNum = num;
+            }
+
+< Lv2 올바른 괄호(공통문제) >
+
+    1. 풀이
+        String s 에 "()" 이 존재하면 "" 으로 변환하라 (반복)
+        정확성은 통과 효율성에서 시간초과로 통과하지 못함
+
+    2. 풀이
+        숫자를 count 해주기 .
+        (가 나오면 +1
+        )가 나오면 -1
+        count 가 음수가 나오거나 최종값이 0이 아니면 false 반환
+
+< Lv1 크레인 인형뽑기 게임 (공통문제) >
+
+< Lv1 문자열 내림차순으로 배치하기 >
+
+< Lv1 2016년 >
+
+
+
+
+

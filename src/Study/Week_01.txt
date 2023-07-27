@@ -41,9 +41,9 @@
             // int sqrt = (int)Math.sqrt(n);
             n / Math.sqrt(n);
 
-        => 왜 0의 경우 왜 변수에 담아두지 않으면 에러가 발생하지 않는지 이해가가지않음
+        ?? 왜 0의 경우 왜 변수에 담아두지 않으면 에러가 발생하지 않는지 이해가가지않음
             Math.sqrt(n) 은 0 이 아닌 건가?
-
+            => https://youtu.be/-GsrYvZoAdA
 
 < 콜라문제 >
     다른사람 풀이
