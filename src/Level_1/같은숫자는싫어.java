@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 public class 같은숫자는싫어 {
 
-    static int[] solution(int []arr) {
+    public int[] solution(int []arr) {
         int[] answer = {};
 
 
@@ -33,7 +33,7 @@ public class 같은숫자는싫어 {
         return answer;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         int[] solution1 = solution(new int[]{1, 1, 3, 3, 0, 1, 1});
         System.out.println("solution1 = " + solution1);
         for (int i : solution1) {
@@ -51,5 +51,5 @@ public class 같은숫자는싫어 {
         }
         System.out.println();
         System.out.println("기대값: [4,3]");
-    }
+    }*/
 }
