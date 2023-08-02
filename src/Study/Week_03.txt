@@ -1,6 +1,6 @@
-< Lv1 콜라 문제 >
+< Lv1 콜라 문제 (공통문제) >
 
-< Lv2 피보나치 수 >
+< Lv2 피보나치 수 (공통문제) >
     1.  n=1 피보나치수 = 1
         n>=2 피보나치수 = fibo(n-1) + fibo(n-2) 로 재귀함수 호출
         => case 7부터 시간초과 발생
@@ -9,4 +9,24 @@
         => 시간초과는 발생하지 않지만 case 7부터 실패가 뜸.
 
     3. 재귀 함수 사용하지 않고 n 을 작은수부터 키워가며 이전값들을 더하는 식으로 변경
+
+< Lv1 자릿수 더하기 >
+    개선 1.
+        while (n / 10 > 0) 반복후 마지막에 남는 첫 자리수를 더해준다
+        -> while 내부의 조건문을 n != 0 으로 변경하면 while 문 밖에서 첫 자리수를 더해줄 필요가 없다.
+
+< Lv1 수박수박수박 >
+    내 풀이
+        n/2 만큼 repeat 를 돌린후 n 이 홀수이면 마지막에 "수"를 더해주기
+
+    다른 사람 풀이
+        1. return new String(new char [n/2+1]).replace("\0", "수박").substring(0,n);
+        2. StringBuffer와 append 사용
+            String 에 계속해서 추가하는 것은 새로운 String 을 생성후 더해주는 것으로 비효율적임.
+            repeat 의 경 구동방식을 알아볼것.
+        3. StringBuffer 와 Builder 차이 찾아보기 synchronized...?
+           => 가장큰 차이점은 동기화 유무
+               StringBuffer : thread-safe
+               StringBuilder : 동기화를 지원하지 않으나, 단일 쓰레드에서의 성능은 StringBuffer 보다 뛰어나다
+           참고자료 : https://ifuwanna.tistory.com/221
 
