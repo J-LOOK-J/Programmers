@@ -33,9 +33,11 @@ public class 피로도 {
 
     static int solution(int k, int[][] dungeons) {
 
+        // 방문 여부 체크
         boolean[] visited = new boolean[dungeons.length];
 
         dfs(k, dungeons, 0, visited);
+
         return answer;
 
     }
@@ -44,13 +46,14 @@ public class 피로도 {
         Stack<Integer> stack = new Stack<>();
 
         for (int i = 0; i < dungeons.length; i++) {
+
             if (!visited[i] && k >= dungeons[i][0]) {
                 visited[i] = true;
                 dfs(k - dungeons[i][1], dungeons, depth + 1, visited);
-                visited[i] = false;
+                visited[i] = false;     // 다른 경우의 수를 위해 미방문 처리
             }
 
-        }
+        }   // for
         answer = answer > depth ? answer : depth;
     }
 
@@ -59,7 +62,5 @@ public class 피로도 {
         int solution1 = solution(80, new int[][]{{80, 20}, {50, 40}, {30, 10}});
         System.out.println("solution1 = " + solution1);
         System.out.println("기대값: 3");
-
-
     }
 }

@@ -1,3 +1,9 @@
 < Lv2 게입 맵 최단거리 (공통문제) >
 
 < Lv2 피로도 (공통문제) >
+
+< [백준] 수 찾기 1920 (공통문제) >
+
+< Lv1 나머지가 1이 되는 수 찾기 >
+    다른풀이) 화살표 함수
+            return IntStream.range(2, n).filter(i -> n % i == 1).findFirst().orElse(0);

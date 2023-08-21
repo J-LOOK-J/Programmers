@@ -1,10 +1,6 @@
 package Level_2;
 
-import org.w3c.dom.Node;
-
 import java.util.LinkedList;
-import java.util.Queue;
-import java.util.stream.Stream;
 
 public class 게임_맵_최단거리 {
 
@@ -19,8 +15,10 @@ public class 게임_맵_최단거리 {
         //bfs
         bfs(maps, visitied);
 
+        // 도착 지점의 최단거리 값 가져오기
         answer = visitied[maps.length - 1][maps[0].length - 1];
 
+        // 도착 지점의 값이 0 이면 도달 하는 방법이 없는 경우이므로 return -1
         if (answer == 0) {
             return -1;
         }
@@ -30,9 +28,8 @@ public class 게임_맵_최단거리 {
 
     static void bfs(int[][] maps, int[][] visitied) {
         LinkedList<int[]> queue = new LinkedList<>();
-        LinkedList<int[]> road = new LinkedList<>();
 
-        int result = 0;
+        // 시작 위치 셋팅
         queue.add(new int[]{0, 0});
         visitied[0][0] = 1;
 
@@ -52,20 +49,15 @@ public class 게임_맵_최단거리 {
                 }
                 if (maps[nRow][nCol] == 1 && visitied[nRow][nCol] == 0) {
                     visitied[nRow][nCol] = visitied[row][col] + 1;
-                    road.add(new int[]{nRow,nCol});
                     queue.add(new int[]{nRow, nCol});
                 }
 
-
+                // 도착 지점에 도달하면 while 문 빠져나오기
                 if (nRow == maps.length && nCol == maps[0].length) {
                     break;
                 }
-            }
-
-
-        }
-
-
+            }   // for
+        }   // while
     }
 
 
