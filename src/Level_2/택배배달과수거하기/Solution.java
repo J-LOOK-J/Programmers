@@ -1,12 +1,9 @@
 package Level_2.택배배달과수거하기;
-
-
 /*
 * 설계
 * 1. 끝집부터 가까운 집순으로 이동
 * 2. 끝부터 deliveries , pickups 를 더해줌
 * 3. 각 합이 cap 과 동일하거나 커질때 물류창고를 방문.
-*
 * */
 public class Solution {
 
@@ -56,6 +53,7 @@ public class Solution {
 
                 deliveries[i] = sumDeliv - cap;
                 pickups[i] = 0;
+
                 // 전부 수거 하지 못한경우 for문 반복을 위해 i증가
                 if (deliveries[i] > 0) {
                     i++;
@@ -71,7 +69,7 @@ public class Solution {
         answer += length * 2;
 
         return answer;
-    }
+    } //solution()
 
     // answer, length, sum 값 계산
     private void setValue() {
@@ -104,6 +102,6 @@ public class Solution {
         }
 
         return remove;
-    }
+    }   // removeBox()
 
 }

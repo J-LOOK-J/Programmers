@@ -26,7 +26,7 @@ public class Solution {
                 boolean[] visited = new boolean[order.length()];
                 charAssem = new char[limit];
                 index = 0;
-                dfs(charArray, visited, limit, 0, sb);  // limit 를 변수로 보내 해당 갯수 조합의 경우만 판단
+                dfs(charArray, visited, limit, 0, sb);  // limit(코스조합) 를 변수로 보내 해당 갯수 조합의 경우만 판단
 
             }
 
@@ -35,7 +35,6 @@ public class Solution {
                 list.add(maxValue.poll());
             }
             max = 0;    // max값 초기화
-
 
         }
             Collections.sort(list);
